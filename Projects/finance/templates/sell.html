@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sell Stocks</title>
+</head>
+<body>
+    <h1>Sell Shares</h1>
+    <form action="/sell" method="post">
+        <select name="symbol" required>
+            <!-- Populate options from user's portfolio in Flask -->
+            {% for stock in stocks %}
+                <option value="{{ stock.symbol }}">{{ stock.symbol }}</option>
+            {% endfor %}
+        </select>
+        <input name="shares" type="number" min="1" required>
+        <button type="submit">Sell</button>
+    </form>
+</body>
+</html>

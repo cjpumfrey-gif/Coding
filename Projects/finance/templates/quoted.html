@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<h2>Quote</h2>
+
+<p>Symbol: {{ stock.symbol }}</p>
+<p>Name: {{ stock.name }}</p>
+<p>Price: {{ stock.price | usd }}</p>
+
+<a href="/">Back to portfolio</a>
+{% endblock %}
